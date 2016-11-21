@@ -9,3 +9,8 @@ tests/coverage
 build/size.csv
 vendor
 composer.lock
+/node/*
+/node_modules/*
+/build/*
+*.sublime-project
+*.sublime-workspace
