@@ -1,32 +1,30 @@
 ﻿<!DOCTYPE html>
-
 <html class="no-js">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <title>Examples | Bootbox.js &mdash; alert, confirm and flexible dialogs for the Bootstrap framework</title>
-
     <script src="./vendor/js/modernizr-custom.js"></script>
-
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" />
     <link rel="stylesheet" type="text/css" href="./vendor/css/google.prettify.min.css" />
-
     <link rel="stylesheet" href="./css/main.css" />
-
     <script src="./js/scroll-fix.js"></script>
     <script>
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-20517424-8']);
-        _gaq.push(['_trackPageview']);
-        (function () {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20517424-8']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
     </script>
     <!-- Universal Analytics; remove the above script and uncomment this after upgrading -->
     <!--<script>
@@ -39,7 +37,6 @@
         ga('create', 'UA-20517424-8', 'auto');
         ga('send', 'pageview');
     </script>-->
-
 </head>
 <body class="bb-js" onload="load()">
     <div class="bb-header bb-header-fixed-navbar">
@@ -115,15 +112,13 @@
                         </li>
                         <li>
                             <a href="https://github.com/makeusabrew/bootbox">
-                                <i class="fa fa-github"></i>
-                                Github
+                                <i class="fa fa-github"></i> Github
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-
         <div id="content" class="bb-docs-header" tabindex="-1">
             <div class="container text-center">
                 <div class="bb-masthead">
@@ -137,7 +132,6 @@
             </div>
         </div>
     </div>
-
     <div class="container">
         <div id="finch-banner">
             <a class="finch-promo" href="https://meetfinch.com">
@@ -146,21 +140,17 @@
                 &mdash;<span class="promo-hl">meetfinch.com</span>
             </a>
         </div>
-
         <div class="content">
             <div class="docs-container">
                 <section class="intro">
                     <p>
-                        The examples below attempt to demonstrate the myriad ways in which you can use Bootbox.js. Where functionality amongst the dialogs is nearly identical,
-                        the example will indicate to which functions the example applies.
+                        The examples below attempt to demonstrate the myriad ways in which you can use Bootbox.js. Where functionality amongst the dialogs is nearly identical, the example will indicate to which functions the example applies.
                     </p>
                 </section>
-
                 <section id="bb-alert-dialog" class="bb-section">
                     <div class="bb-section-header">
                         <div class="pull-right">
-                            <a href="./documentation.html#bb-alert-dialog" class="btn btn-link">Documentation</a>
-                            |
+                            <a href="./documentation.html#bb-alert-dialog" class="btn btn-link">Documentation</a> |
                             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#bb-alert-examples" aria-expanded="false" aria-controls="bb-alert-examples">
                                 Show / Hide
                             </button>
@@ -202,8 +192,7 @@
                                     <p class="bb-example">
                                         <span class="pull-right">
                                             Also applies to: <b>Confirm</b>, <b>Prompt</b>, <b>Custom</b>
-                                        </span>
-                                        Small dialog
+                                        </span> Small dialog
                                     </p>
                                     <p>
                                         <button type="button" class="btn btn-primary example-button" data-bb-example-key="alert-small">Run example</button>
@@ -217,8 +206,7 @@
                                     <p class="bb-example">
                                         <span class="pull-right">
                                             Also applies to: <b>Confirm</b>, <b>Prompt</b>, <b>Custom</b>
-                                        </span>
-                                        Large dialog
+                                        </span> Large dialog
                                     </p>
                                     <p>
                                         <button type="button" class="btn btn-primary example-button" data-bb-example-key="alert-large">Run example</button>
@@ -232,8 +220,7 @@
                                     <p class="bb-example">
                                         <span class="pull-right">
                                             Also applies to: <b>Confirm</b>, <b>Prompt</b>, <b>Custom</b>
-                                        </span>
-                                        Custom CSS class
+                                        </span> Custom CSS class
                                     </p>
                                     <p>
                                         <button type="button" class="btn btn-primary example-button" data-bb-example-key="alert-custom-class">Run example</button>
@@ -247,8 +234,7 @@
                                     <p class="bb-example">
                                         <span class="pull-right">
                                             Also applies to: <b>Confirm</b>, <b>Prompt</b>, <b>Custom</b>
-                                        </span>
-                                        Dismiss with overlay click
+                                        </span> Dismiss with overlay click
                                     </p>
                                     <p>
                                         <button type="button" class="btn btn-primary example-button" data-bb-example-key="alert-overlay-click">Run example</button>
@@ -262,13 +248,10 @@
                         </div>
                     </div>
                 </section>
-
-
                 <section id="bb-confirm-dialog" class="bb-section">
                     <div class="bb-section-header">
                         <div class="pull-right">
-                            <a href="./documentation.html#bb-confirm-dialog" class="btn btn-link">Documentation</a>
-                            |
+                            <a href="./documentation.html#bb-confirm-dialog" class="btn btn-link">Documentation</a> |
                             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#bb-confirm-examples" aria-expanded="false" aria-controls="bb-confirm-examples">
                                 Show / Hide
                             </button>
@@ -289,8 +272,7 @@
                                     <p class="bb-example">
                                         <span class="pull-right">
                                             Also applies to: <b>Alert</b>, <b>Prompt</b>, <b>Custom</b>
-                                        </span>
-                                        With alternate button text and color
+                                        </span> With alternate button text and color
                                     </p>
                                     <p>
                                         <button type="button" class="btn btn-primary example-button" data-bb-example-key="confirm-options">Run example</button>
@@ -316,8 +298,7 @@
                                     <p class="bb-example">
                                         <span class="pull-right">
                                             Also applies to: <b>Alert</b>, <b>Prompt</b>, <b>Custom</b>
-                                        </span>
-                                        With icon and button text
+                                        </span> With icon and button text
                                     </p>
                                     <p>
                                         <button type="button" class="btn btn-primary example-button" data-bb-example-key="confirm-button-text">Run example</button>
@@ -342,13 +323,10 @@
                         </div>
                     </div>
                 </section>
-
-
                 <section id="bb-prompt-dialog" class="bb-section">
                     <div class="bb-section-header">
                         <div class="pull-right">
-                            <a href="./documentation.html#bb-prompt-dialog" class="btn btn-link">Documentation</a>
-                            |
+                            <a href="./documentation.html#bb-prompt-dialog" class="btn btn-link">Documentation</a> |
                             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#bb-prompt-examples" aria-expanded="false" aria-controls="bb-prompt-examples">
                                 Show / Hide
                             </button>
@@ -399,8 +377,7 @@
                                     <p class="bb-example">
                                         <span class="pull-right text-danger">
                                             Requires browser support: <a href="http://caniuse.com/#feat=input-datetime">http://caniuse.com/#feat=input-datetime</a>
-                                        </span>
-                                        Prompt with date
+                                        </span> Prompt with date
                                     </p>
                                     <p>
                                         <button type="button" class="btn btn-primary example-button" data-bb-example-key="prompt-date">Run example</button>
@@ -417,8 +394,7 @@
                                     <p class="bb-example">
                                         <span class="pull-right text-danger">
                                             Requires browser support: <a href="http://caniuse.com/#feat=email">http://caniuse.com/#feat=email</a>
-                                        </span>
-                                        Prompt with email
+                                        </span> Prompt with email
                                     </p>
                                     <p>
                                         <button type="button" class="btn btn-primary example-button" data-bb-example-key="prompt-email">Run example</button>
@@ -435,8 +411,7 @@
                                     <p class="bb-example">
                                         <span class="pull-right text-danger">
                                             Requires browser support: <a href="http://caniuse.com/#feat=input-number">http://caniuse.com/#feat=input-number</a>
-                                        </span>
-                                        Prompt with number
+                                        </span> Prompt with number
                                     </p>
                                     <p>
                                         <button type="button" class="btn btn-primary example-button" data-bb-example-key="prompt-number">Run example</button>
@@ -510,8 +485,7 @@
                                     <p class="bb-example">
                                         <span class="pull-right text-danger">
                                             Requires browser support: <a href="http://caniuse.com/#feat=input-datetime">http://caniuse.com/#feat=input-datetime</a>
-                                        </span>
-                                        Prompt with time
+                                        </span> Prompt with time
                                     </p>
                                     <p>
                                         <button type="button" class="btn btn-primary example-button" data-bb-example-key="prompt-time">Run example</button>
@@ -528,13 +502,10 @@
                         </div>
                     </div>
                 </section>
-
-
                 <section id="bb-custom-dialog" class="bb-section">
                     <div class="bb-section-header">
                         <div class="pull-right">
-                            <a href="./documentation.html#bb-custom-dialog" class="btn btn-link">Documentation</a>
-                            |
+                            <a href="./documentation.html#bb-custom-dialog" class="btn btn-link">Documentation</a> |
                             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#bb-custom-examples" aria-expanded="false" aria-controls="bb-custom-examples">
                                 Show / Hide
                             </button>
@@ -563,8 +534,7 @@ dialog.modal('hide');</code></pre>
                                     <p class="bb-example">
                                         <span class="pull-right">
                                             Also applies to: <b>Alert</b>, <b>Confirm</b>, <b>Prompt</b>
-                                        </span>
-                                        Custom dialog, using init
+                                        </span> Custom dialog, using init
                                     </p>
                                     <p>
                                         <button type="button" class="btn btn-primary example-button" data-bb-example-key="custom-dialog-init">Run example</button>
@@ -579,6 +549,28 @@ dialog.init(function(){
     }, 3000);
 });</code></pre>
                                 </li>
+                                <li id="center-dialog">
+                                    <p class="bb-example">
+                                        Center dialog, and self-adaptive
+                                    </p>
+                                    <p>
+                                        <button type="button" class="btn btn-primary example-button" data-bb-example-key="center-dialog">Run example</button>
+                                    </p>
+                                    <pre class="prettyprint linenums"><code>var dialog = bootbox.dialog({
+    title: 'A center dialog and self-adaptive',
+    position: "center",
+    maxHeight: 0.8,
+    message: '&lt;div id="fill-block" style="height: 600px; line-height: 600px; text-align: center; font-size: 20px; color: #ccc;"&gt;600px&lt;/div&gt;'
+});
+dialog.init(function() {
+    setTimeout(function() {
+        dialog.find('#fill-block').css({ "height": "200px", "line-height": "200px" }).html("200px");
+        setTimeout(function() {
+            dialog.find('#fill-block').css({ "height": "2000px", "line-height": "2000px" }).html("2000px");
+        }, 3000)
+    }, 3000);
+});
+</code></pre>
                             </ul>
                         </div>
                     </div>
@@ -586,31 +578,37 @@ dialog.init(function(){
             </div>
         </div>
     </div>
-
     <footer id="footer">
         <div class="container">
             <div class="pull-right">
                 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bootboxjs.com" data-via="makeusabrew" data-related="makeusabrew" data-size="large">Tweet</a>
                 <a href="https://twitter.com/makeusabrew" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @makeusabrew</a>
-                <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+                <script>
+                ! function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (!d.getElementById(id)) {
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = "//platform.twitter.com/widgets.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }
+                }(document, "script", "twitter-wjs");
+                </script>
             </div>
-            &copy; 2011-2016 <a href="http://twitter.com/makeusabrew">Nick Payne</a>.
-            Proudly sponsored by <a href="https://meetfinch.com">meetfinch.com</a> &mdash; Share your local websites.
+            &copy; 2011-2016 <a href="http://twitter.com/makeusabrew">Nick Payne</a>. Proudly sponsored by <a href="https://meetfinch.com">meetfinch.com</a> &mdash; Share your local websites.
         </div>
     </footer>
-
     <div class="bb-alert alert alert-info" style="display:none;">
         <span>The examples populate this alert with dummy content</span>
     </div>
-
     <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.0/anchor.js"></script>
     <script src="./bootbox.js"></script>
-
     <script src="./vendor/js/prettify.min.js"></script>
     <script src="./vendor/js/jquery.scrollUp.min.js"></script>
     <script src="./js/example.js"></script>
     <script src="./js/demos.js"></script>
 </body>
+
 </html>

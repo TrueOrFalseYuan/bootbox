@@ -1,5 +1,4 @@
-
-$(function () {
+$(function() {
     var doc = $('html, body');
 
     try {
@@ -10,8 +9,7 @@ $(function () {
         Example.init({
             "selector": ".bb-alert"
         });
-    }
-    catch (ex) {
+    } catch (ex) {
         console.log(ex.message);
     }
 
@@ -21,14 +19,13 @@ $(function () {
             animationSpeed: '600',
             scrollText: '<i class="fa fa-4x fa-arrow-circle-up"></i>'
         });
-    }
-    catch (ex) {
+    } catch (ex) {
         console.log(ex.message);
     }
 
     try {
         $(document)
-            .on('click', '.dropdown-menu li a[href^="#"]', function (e) {
+            .on('click', '.dropdown-menu li a[href^="#"]', function(e) {
                 e.preventDefault();
 
                 var target = $(this).attr('href');
@@ -40,23 +37,22 @@ $(function () {
 
                 doc.animate({
                     scrollTop: offset
-                }, 'slow', function () {
+                }, 'slow', function() {
                     //window.location.hash = target;
                 });
             })
             .off('click', 'a.back-to-top')
-            .on('click', 'a.back-to-top', function (e) {
+            .on('click', 'a.back-to-top', function(e) {
                 e.preventDefault();
                 doc.animate({ scrollTop: 0 }, 'slow');
             });
-    }
-    catch (ex) {
+    } catch (ex) {
         console.log(ex.message);
     }
 
 
     try {
-        $('.example-button').on('click', function (e) {
+        $('.example-button').on('click', function(e) {
             e.preventDefault();
 
             var key = $(this).data('bb-example-key');
@@ -71,7 +67,7 @@ $(function () {
                         break;
 
                     case 'alert-callback':
-                        bootbox.alert("This is an alert with a callback!", function () {
+                        bootbox.alert("This is an alert with a callback!", function() {
                             Example.show('This was logged in the callback!');
                         });
                         break;
@@ -79,7 +75,7 @@ $(function () {
                     case 'alert-options':
                         bootbox.alert({
                             message: "This is an alert with a callback!",
-                            callback: function () {
+                            callback: function() {
                                 Example.show('This was logged in the callback!');
                             }
                         });
@@ -121,7 +117,7 @@ $(function () {
                         /* Confirms */
 
                     case 'confirm-default':
-                        bootbox.confirm("This is the default confirm.", function (result) {
+                        bootbox.confirm("This is the default confirm.", function(result) {
                             Example.show('This was logged in the callback: ' + result);
                         });
                         break;
@@ -139,7 +135,7 @@ $(function () {
                                     className: 'btn-danger'
                                 }
                             },
-                            callback: function (result) {
+                            callback: function(result) {
                                 Example.show('This was logged in the callback: ' + result);
                             }
                         });
@@ -157,7 +153,7 @@ $(function () {
                                     label: '<i class="fa fa-check"></i> Confirm'
                                 }
                             },
-                            callback: function (result) {
+                            callback: function(result) {
                                 Example.show('This was logged in the callback: ' + result);
                             }
                         });
@@ -165,7 +161,7 @@ $(function () {
 
                         /* Prompts */
                     case 'prompt-default':
-                        bootbox.prompt("This is the default prompt!", function (result) {
+                        bootbox.prompt("This is the default prompt!", function(result) {
                             Example.show('This was logged in the callback: ' + result);
                         });
                         break;
@@ -174,21 +170,17 @@ $(function () {
                         bootbox.prompt({
                             title: "This is a prompt with a set of checkbox inputs!",
                             inputType: 'checkbox',
-                            inputOptions: [
-                                {
-                                    text: 'Choice One',
-                                    value: '1',
-                                },
-                                {
-                                    text: 'Choice Two',
-                                    value: '2',
-                                },
-                                {
-                                    text: 'Choice Three',
-                                    value: '3',
-                                }
-                            ],
-                            callback: function (result) {
+                            inputOptions: [{
+                                text: 'Choice One',
+                                value: '1',
+                            }, {
+                                text: 'Choice Two',
+                                value: '2',
+                            }, {
+                                text: 'Choice Three',
+                                value: '3',
+                            }],
+                            callback: function(result) {
                                 Example.show('This was logged in the callback: ' + result);
                             }
                         });
@@ -198,7 +190,7 @@ $(function () {
                         bootbox.prompt({
                             title: "This is a prompt with a date input!",
                             inputType: 'date',
-                            callback: function (result) {
+                            callback: function(result) {
                                 Example.show('This was logged in the callback: ' + result);
                             }
                         });
@@ -208,7 +200,7 @@ $(function () {
                         bootbox.prompt({
                             title: "This is a prompt with an email input!",
                             inputType: 'email',
-                            callback: function (result) {
+                            callback: function(result) {
                                 Example.show('This was logged in the callback: ' + result);
                             }
                         });
@@ -218,7 +210,7 @@ $(function () {
                         bootbox.prompt({
                             title: "This is a prompt with a number input!",
                             inputType: 'number',
-                            callback: function (result) {
+                            callback: function(result) {
                                 Example.show('This was logged in the callback: ' + result);
                             }
                         });
@@ -228,7 +220,7 @@ $(function () {
                         bootbox.prompt({
                             title: "This is a prompt with a password input!",
                             inputType: 'password',
-                            callback: function (result) {
+                            callback: function(result) {
                                 Example.show('This was logged in the callback: ' + result);
                             }
                         });
@@ -238,25 +230,20 @@ $(function () {
                         bootbox.prompt({
                             title: "This is a prompt with select!",
                             inputType: 'select',
-                            inputOptions: [
-                                {
-                                    text: 'Choose one...',
-                                    value: '',
-                                },
-                                {
-                                    text: 'Choice One',
-                                    value: '1',
-                                },
-                                {
-                                    text: 'Choice Two',
-                                    value: '2',
-                                },
-                                {
-                                    text: 'Choice Three',
-                                    value: '3',
-                                }
-                            ],
-                            callback: function (result) {
+                            inputOptions: [{
+                                text: 'Choose one...',
+                                value: '',
+                            }, {
+                                text: 'Choice One',
+                                value: '1',
+                            }, {
+                                text: 'Choice Two',
+                                value: '2',
+                            }, {
+                                text: 'Choice Three',
+                                value: '3',
+                            }],
+                            callback: function(result) {
                                 Example.show('This was logged in the callback: ' + result);
                             }
                         });
@@ -266,7 +253,7 @@ $(function () {
                         bootbox.prompt({
                             title: "This is a prompt with a textarea!",
                             inputType: 'textarea',
-                            callback: function (result) {
+                            callback: function(result) {
                                 Example.show('This was logged in the callback: ' + result);
                             }
                         });
@@ -276,7 +263,7 @@ $(function () {
                         bootbox.prompt({
                             title: "This is a prompt with a time input!",
                             inputType: 'time',
-                            callback: function (result) {
+                            callback: function(result) {
                                 Example.show('This was logged in the callback: ' + result);
                             }
                         });
@@ -292,7 +279,7 @@ $(function () {
                             closeButton: false
                         });
 
-                        setTimeout(function () {
+                        setTimeout(function() {
                             dialog.modal('hide');
                         }, timeout);
 
@@ -304,9 +291,27 @@ $(function () {
                             message: '<p><i class="fa fa-spin fa-spinner"></i> Loading...</p>'
                         });
 
-                        dialog.init(function () {
-                            setTimeout(function () {
+                        dialog.init(function() {
+                            setTimeout(function() {
                                 dialog.find('.bootbox-body').html('I was loaded after the dialog was shown!');
+                            }, 3000);
+                        });
+
+                        break;
+
+                    case 'center-dialog':
+                        var dialog = bootbox.dialog({
+                            title: 'A center dialog and self-adaptive',
+                            position: "center",
+                            maxHeight: 0.8,
+                            message: '<div id="fill-block" style="height: 600px; line-height: 600px; text-align: center; font-size: 20px; color: #ccc;">600px</div>'
+                        });
+                        dialog.init(function() {
+                            setTimeout(function() {
+                                dialog.find('#fill-block').css({ "height": "200px", "line-height": "200px" }).html("200px");
+                                setTimeout(function() {
+                                    dialog.find('#fill-block').css({ "height": "2000px", "line-height": "2000px" }).html("2000px");
+                                }, 3000)
                             }, 3000);
                         });
 
@@ -314,8 +319,7 @@ $(function () {
                 }
             }
         });
-    }
-    catch (ex) {
+    } catch (ex) {
         console.log(ex.message);
     }
 
