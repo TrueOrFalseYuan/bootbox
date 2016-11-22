@@ -1,5 +1,7 @@
 /**
- * bootbox.js v4.4.0
+ * bootbox.js v4.5.0
+*
+ * forked by TrueOrFalse.Yuan@2016.11.22
  *
  * http://bootboxjs.com/license.txt
  */

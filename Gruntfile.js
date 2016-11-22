@@ -6,7 +6,7 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    "bootbox.min.js": ["bootbox.js"]
+                    "build/bootbox.min.js": ["bootbox.js"]
                 }
             }
         },
