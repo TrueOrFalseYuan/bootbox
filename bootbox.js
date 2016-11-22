@@ -62,7 +62,7 @@
 
     var defaults = {
         // default language
-        locale: "zh_CN",
+        locale: "en",
         // show backdrop or not. Default to static so user has to interact with dialog
         backdrop: "static",
         // animate the modal in/out
@@ -77,8 +77,7 @@
         show: true,
         // dialog position(default/center)
         position: "default",
-        // height restricted or not (auto/height ratio[0~1,like 0.9])
-        autoHeight: false,
+        // Height restricted or not (auto/height ratio[0~1,like 0.9])
         maxHeight: "auto",
         // dialog container
         container: "body"
@@ -638,68 +637,73 @@
             dialog.find(".modal-footer").html(buttonStr);
         }
 
-        if (options.position == "center") {
-            dialog.on("show.bs.modal", function() {
-                var another = innerDialog.clone();
-                another.css({
-                    "position": "absolute",
-                    "left": "0px",
-                    "top": "0px",
-                    "visibility": "hidden"
-                });
-                $(document.body).prepend(another);
-
-                innerDialog.css({
-                    "position": "absolute",
-                    "left": "50%",
-                    "top": "50%",
-                    "margin-top": Math.ceil(-another.outerHeight() / 2) + "px",
-                    "margin-left": Math.ceil(-another.outerWidth() / 2) + "px"
-                });
-                another.remove();
-            });
-
+        if (options.position === "center") {
             var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
             var mutationObserverSupport = !!MutationObserver;
-            if (!mutationObserverSupport) {
-                console.warn("MutationObserver isn't supported!The box can't be align center automatically.")
-            }
-            
-            var currentDialogHeight = 0;
-            var currentDialogWidth = 0;
-            dialog.on("shown.bs.modal", function() {
-                currentDialogHeight = innerDialog.outerHeight();
-                currentDialogWidth = innerDialog.outerWidth();
-                var mo = new MutationObserver(function(records) {
-                    var newHeight = innerDialog.outerHeight();
-                    var newWidth = innerDialog.outerWidth();
-                    if (newHeight != currentDialogHeight) {
-                        console.log(currentDialogHeight + " - " + newHeight);
+            if (mutationObserverSupport) {
+                dialog.one("show.bs.modal", function() {
+                    var another = innerDialog.clone();
+                    another.css({
+                        "position": "absolute",
+                        "left": "0px",
+                        "top": "0px",
+                        "visibility": "hidden"
+                    });
+                    $(document.body).prepend(another);
+
+                    if (another.outerHeight() < $(window).height()) {
                         innerDialog.css({
-                            "margin-top": Math.ceil(-newHeight / 2) + "px"
+                            "position": "absolute",
+                            "left": "50%",
+                            "top": "50%",
+                            "margin-top": Math.ceil(-another.outerHeight() / 2) + "px",
+                            "margin-left": Math.ceil(-another.outerWidth() / 2) + "px"
                         });
-                        currentDialogHeight = newHeight;
                     }
-                    if (newWidth != currentDialogWidth) {
-                        console.log(currentDialogWidth + " - " + newWidth);
-                        innerDialog.css({
-                            "margin-left": Math.ceil(-newWidth / 2) + "px"
-                        });
-                        currentDialogWidth = newWidth;
-                    }
+
+                    another.remove();
                 });
 
-                mo.observe(innerDialog[0], {
-                    childList: true,
-                    attributes: true,
-                    subtree: true
+                var currentDialogHeight = 0;
+                dialog.one("shown.bs.modal", function() {
+                    currentDialogHeight = innerDialog.outerHeight();
+                    var mo = new MutationObserver(function() {
+                        if (options.position === "center") {
+                            var newHeight = innerDialog.outerHeight();
+                            var newWidth = innerDialog.outerWidth();
+
+                            if (newHeight < $(window).height()) {
+                                innerDialog.css({
+                                    "position": "absolute",
+                                    "left": "50%",
+                                    "top": "50%",
+                                    "margin-top": Math.ceil(-newHeight / 2) + "px",
+                                    "margin-left": Math.ceil(-newWidth / 2) + "px"
+                                });
+                            } else {
+                                innerDialog.css({
+                                    "position": "",
+                                    "left": "",
+                                    "top": "",
+                                    "margin-top": "",
+                                    "margin-left": ""
+                                });
+                            }
+                            currentDialogHeight = newHeight;
+                        }
+                    });
+                    mo.observe(innerDialog[0], {
+                        childList: true,
+                        attributes: true,
+                        subtree: true
+                    });
                 });
-            });
+            }
         }
 
-        if (option.maxHeight != "auto" && $.isNumeric(option.maxHeight)) {
+        if (options.maxHeight !== "auto" && $.isNumeric(options.maxHeight)) {
             innerDialog.css("overflow", "auto");
-            innerDialog.css("max-height", Math.ceil(options.maxHeight * $(document.body).outerHeight()));
+            innerDialog.css("max-height", Math.ceil(options.maxHeight * $(window).height()));
         }
 
 
